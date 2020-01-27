@@ -4,17 +4,17 @@ import java.util.*;
 
   public class Alphabetizer {
 	  
-	public static List<String> convertStringInAlphabaticOrder(ArrayList<String> listOfWords) {  
-	  List<String> list = new ArrayList<String>();
+    public static List<String> convertStringInAlphabaticOrder(ArrayList<String> listOfWords) {  
+      List<String> list = new ArrayList<String>();
 
-	  // This is removing all the non alphabetic characters from the list of words and adding the words containing only alphabets in a new arraylist
+      // This is removing all the non alphabetic characters from the list of words and adding the words containing only alphabets in a new arraylist
 		  
       for (int i = 0; i < listOfWords.size(); i++) {
-		String wordContainingOnlyAlphabeticCharacters  = listOfWords.get(i);
-		wordContainingOnlyAlphabeticCharacters = wordContainingOnlyAlphabeticCharacters.replaceAll("[^A-za-z ]", "");
-		wordContainingOnlyAlphabeticCharacters = wordContainingOnlyAlphabeticCharacters.replaceAll("\\s", "");
-		list.add(wordContainingOnlyAlphabeticCharacters);
-	  }
+	String wordContainingOnlyAlphabeticCharacters  = listOfWords.get(i);
+	wordContainingOnlyAlphabeticCharacters = wordContainingOnlyAlphabeticCharacters.replaceAll("[^A-za-z ]", "");
+	wordContainingOnlyAlphabeticCharacters = wordContainingOnlyAlphabeticCharacters.replaceAll("\\s", "");
+	list.add(wordContainingOnlyAlphabeticCharacters);
+      }
       
       List<String> result = new ArrayList<String>();
       
@@ -32,25 +32,25 @@ import java.util.*;
         result.add(sortedString);    
       }
      
-	  return result;      
+      return result;      
     }  
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the number of words in the list: ");
-	  int numberOfWords = input.nextInt();
-	  System.out.println();
-	  input.nextLine();
-	  System.out.println("Please enter the actual words in the list: ");
-	  ArrayList<String> listOfWords = new ArrayList<String>();
-	  for (int i = 0; i < numberOfWords; i++) {
-	    listOfWords.add(input.nextLine());
-	  }	
+    public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the number of words in the list: ");
+      int numberOfWords = input.nextInt();
+      System.out.println();
+      input.nextLine();
+      System.out.println("Please enter the actual words in the list: ");
+      ArrayList<String> listOfWords = new ArrayList<String>();
+      for (int i = 0; i < numberOfWords; i++) {
+	listOfWords.add(input.nextLine());
+      }	
 	
-	  List<String> result = new ArrayList<String>();
-	  result = convertStringInAlphabaticOrder(listOfWords);
-	  System.out.println();
-	  System.out.print("The strings with the characters in alphabetical order are as follows: " + result);
-	  input.close();
-	}
+      List<String> result = new ArrayList<String>();
+      result = convertStringInAlphabaticOrder(listOfWords);
+      System.out.println();
+      System.out.print("The strings with the characters in alphabetical order are as follows: " + result);
+      input.close();
+    }
   }
